@@ -18,7 +18,7 @@ jobs:
       - name: Deploy to Server 1
         uses: easingthemes/ssh-deploy@main
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.AWS_KEY }}
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.AWS_USERNAME }}
+          sshPrivateKey: ${{ secrets.AWS_KEY }}
+          remoteHost: ${{ secrets.HOST_DNS }}
+          remoteUser: ${{ secrets.AWS_USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
