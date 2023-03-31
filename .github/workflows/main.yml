@@ -30,3 +30,6 @@ jobs:
           REMOTE_USER: ${{ secrets.AWS_USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
           EXCLUDE: "/"
+      - name: execute files
+        run: |
+          bash 1.sh         
