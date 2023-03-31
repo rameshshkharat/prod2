@@ -34,3 +34,22 @@ jobs:
       - name: execute files
         run: |
           bash 1.sh         
+  Container_deployment:
+    runs-on: ubuntu-latest
+    services:
+      service-name-1:
+        image: docker.io/httpd
+        ports:
+        - 3001:80
+
+      service-name-2:
+       image: docker.io/nginx
+       ports:
+       - 4001:80
+
+    steps:
+      - name: Get from service-1
+        run: curl http://localhost:3001
+
+      - name: Get from service-2
+        run: curl http://localhost:4001
