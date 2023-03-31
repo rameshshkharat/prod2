@@ -14,8 +14,9 @@ jobs:
     environment: production
     steps:
       - name: test
-        run: echo hostname1
-        
+        run: |
+          echo hostname1
+          touch /home/ubuntu/1.txt
       - name: Checkout the files
         uses: actions/checkout@v2
       - name: Deploy to Server 1
