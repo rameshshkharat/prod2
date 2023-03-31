@@ -17,14 +17,8 @@ jobs:
         
       - name: Checkout the files
         uses: actions/checkout@v2
-
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.AWS_KEY}}
-          ARGS: "-rlgoDzvc -i --delete"
-          SOURCE: "./"
-          REMOTE_HOST: ${{secrets.HOST_DNS}}
-          REMOTE_USER: ${{secrets.AWS_USERNAME}}
-          TARGET: ${{secrets.TARGET_DIR}}
-          
+      - name: connecting ec2 server
+        run: |
+          ssh -i ${{secrets.AWS_KEY}} ec2-user@${{secrets.HOST_DNS}}
+          hostname
+      
