@@ -13,7 +13,8 @@ jobs:
     
     steps:
       - name: test
-        run: echo ${{ secrets.AWS_KEY }}
+        run: hostname
+        
       - name: Checkout the files
         uses: actions/checkout@v2
 
