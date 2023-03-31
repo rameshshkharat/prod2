@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - name: test
-        run: hostname
+        run: echo hostname1
         
       - name: Checkout the files
         uses: actions/checkout@v2
