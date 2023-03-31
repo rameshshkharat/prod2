@@ -22,7 +22,8 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         
         env:
-          sshPrivateKey: ${{ secrets.AWS_KEY }}
-          remoteHost: ${{ secrets.HOST_DNS }}
-          remoteUser: ${{ secrets.AWS_USERNAME }}
+          SSH_PRIVATE_KEY: ${{ secrets.AWS_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.AWS_USERNAME }}
+          REMOTE_PORT: 22
           TARGET: ${{ secrets.TARGET_DIR }}
