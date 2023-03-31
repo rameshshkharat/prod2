@@ -24,4 +24,4 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.AWS_USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
+          
