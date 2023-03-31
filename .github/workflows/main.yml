@@ -9,13 +9,13 @@ on:
 jobs:
   deploy:
     name: Deploy to EC2 on master branch push
-    #runs-on: self-hosted
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    #runs-on: ubuntu-latest
     environment: production
     steps:
       - name: test
         run: |
-          echo hostname1
+          hostname
           pwd
           touch 1.txt
       - name: Checkout the files
