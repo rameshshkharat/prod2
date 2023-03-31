@@ -16,7 +16,8 @@ jobs:
       - name: test
         run: |
           echo hostname1
-          touch /home/ubuntu/1.txt
+          pwd
+          touch 1.txt
       - name: Checkout the files
         uses: actions/checkout@v2
       - name: Deploy to Server 1
