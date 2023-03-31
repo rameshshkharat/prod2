@@ -17,10 +17,10 @@ jobs:
         
       - name: Checkout the files
         uses: actions/checkout@v2
-      - name: connecting ec2 server
-        run: |
-          echo ${{secrets.AWS_KEY}} > ec2.pem
-          chmod 600 ec2.pem
-          ssh -i ec2.pem ec2-user@${{secrets.HOST_DNS}}
-          hostname
-      
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${ { secrets.HOST_DNS }}
+          REMOTE_USER: ${ { secrets.USERNAME }}
+          TARGET: ${ { secrets.TARGET_DIR }}
