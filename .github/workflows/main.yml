@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy to EC2 on master branch push
-    runs-on: ip-172-31-9-116      
+    runs-on: prod      
     #runs-on: self-hosted
     #runs-on: ubuntu-latest
     environment: production
